@@ -39,10 +39,10 @@ def main():
   '''
   st.title('Forecast Time Series Data with Facebook Prophet')
   st.image("graph.png", use_column_width=True)  
-  activity = ['Google Trends','Stock Prediction']
+  activity = ['Stock Prediction', 'Google Trends']
   choice = st.selectbox("Select Activity", activity)  
   st.write('### General information')
-  st.write('This is only an example of how you can use Facebook Prophet as a way to predict trends for Google Trend data and also stock predictions using Google Finance. This will help the user to visualize and make informed decisions. **Please do not take this as financial advice.** This is for education purposes only.')
+  st.write('This is only an example of how you can use Facebook Prophet as a way to predict trends for Google Trend data and also stock predictions. This will help the user to visualize and understand how Time Series Machine Learning can be applied. **Please do not take any results as financial advice.** This is for education purposes only.')
   
   if choice == 'Stock Prediction':
     '''This activity will allow the user to fetch stock data through an API and use that data to predict stock price
