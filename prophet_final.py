@@ -54,30 +54,34 @@ def main():
     * Drag and Drop into the Uploader.
     """
     gf = st.file_uploader('Upload the Google trend time series csv file here', type='csv', encoding='auto')
-
-    #call clean function
-    if st.button("Analyze Data"):
-      ready = clean(gf)
-      st.write(ready.shape)
     
-      max_date = ready['ds'].max()
-      min_date = ready['ds'].min()
-
-    #lets users select the most recent and oldest data
-      dateselection = st.selectbox("Check Date",['Most Recent Date','Oldest Date'])
-      if dateselection == "Most Recent Date":
-        st.write("The most recent date", max_date)
-      else:
-        st.write("The oldest date", min_date)
     st.write('### (1) Select how many days you would like to forecast')
     st.warning('The longer the forecasted days, the less accurate the predictions are.')
 
     #Allows the user to choose how many days they want to forecast
     periods_input = st.slider('Select how many days you want to forecast in the future',
-    min_value = 1, max_value = 365)
+    min_value = 1, max_value = 365)   
+
+    #call clean function    
+    if st.button("Predict"):
+      '''View the csv data
+      '''
+      ready = clean(gf)
+      st.write(ready.shape)
+  
+      max_date = ready['ds'].max()
+      min_date = ready['ds'].min()
+
+  # #lets users select the most recent and oldest data
+  #   dateselection = st.selectbox("Check Date",['Most Recent Date','Oldest Date'])
+  #   if dateselection == "Most Recent Date":
+  #     st.write("The most recent date", max_date)
+  #   else:
+  #     st.write("The oldest date", min_date)
+
 
     #Train facebook prophet
-    if st.button("Predict"):
+    
       train_dataset = ready.copy()
       prophet_basic = Prophet()
       prophet_basic.fit(train_dataset)
@@ -96,13 +100,13 @@ def main():
       
       """
       ### GRAPH1
-      The next visual show in black dots are the data points and blue line is the predicted line over the given time.
+      TThe next visual show in black dots are the actual data points and blue line is the predicted line over the given time.
       """  
       fig1=prophet_basic.plot(forecast)
       st.write(fig1)
       """
       ### GRAPH 2
-      The graphs below show a high level trend of predicted values, day of week trends, and yearly trends, depending on the data. The blue line represents the confidence intervals.
+      The graphs below show a high level trend of predicted values, day of week trends, and yearly trends, depending on the data.
       """
       fig2 = prophet_basic.plot_components(forecast)
       st.write(fig2)
@@ -180,13 +184,13 @@ def main():
       st.write(fcst)
       """
       ### GRAPH1
-      The next visual show in black dots are the data points and blue line is the predicted line over the given time.
+      The next visual show in black dots are the actual data points and blue line is the predicted line over the given time.
       """          
       st.write(fig1)
 
       """
       ### GRAPH 2
-      The graphs below show a high level trend of predicted values, day of week trends, and yearly trends, depending on the data. The blue line represents the confidence intervals.
+      The graphs below show a high level trend of predicted values, day of week trends, and yearly trends, depending on the data. The blue line is the prediction line and the blue area represents the confidence intervals.
       """
       fig2 = prophet_basic.plot_components(forecast)
       st.write(fig2)         
