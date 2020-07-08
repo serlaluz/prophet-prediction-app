@@ -91,3 +91,4 @@ webencodings==0.5.1
 widgetsnbextension==3.5.1
 yfinance==0.1.54
 zope.interface==5.1.0
+pycoingecko==1.2.0
