@@ -36,6 +36,9 @@ Project URL - https://prophet-prediction-app.herokuapp.com/
 6. Read Chart
 7. Download forecasted datatable
 
+## Upcoming Features
+* Add Cryptocurrency Predictions(July 12th)
+
 ## UI tool
 * Streamlit, https://www.streamlit.io/
 
@@ -52,4 +55,5 @@ Project URL - https://prophet-prediction-app.herokuapp.com/
 2. Facebook's Prophet, https://facebook.github.io/prophet/
 3. Rakshitratan, https://github.com/rakshitratan/Stock-Price-Prediction
 4. Viral ML, https://www.viralml.com/video-content.html?v=AX1wKnBPhvU
+5. https://github.com/Conformist101/streamlit_stock_predict_app
 
