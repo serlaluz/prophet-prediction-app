@@ -6,8 +6,10 @@ Simple web app that uses Facebook's Prophet model to predict trends and stock pr
 ## General 
 This is a simple app that utilizes facebook's open source project Prophet. This machine learning model is good at interpreting and making predictions based on time series data. With this app you can do the following things
 
-1. Predict Stock Price
-2. Predict Google Trends
+1. Predict Cryptocurrency Price
+2. Predict Stock Price
+3. Predict Google Trends
+
 
 ## Machine Model Used
 
