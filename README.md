@@ -18,6 +18,17 @@ I used facebook's opensource project Prophet.
 Project URL - https://prophet-prediction-app.herokuapp.com/
 
 ## Steps
+
+### Cryptocurrency App
+1. Select Activity : "Stock Prediction" 
+2. Input target cryptocurrency, eg. bitcoin, ethereum, ripple
+3. Enter currency
+4. Enter Start and End Date
+5. Download the stock data(if needed)
+6. Choose days you want to predict ahead
+7. Press **Predict**
+8. Read Chart
+
 ### Stock App
 1. Select Activity : "Stock Prediction" 
 2. Input target stock's ticker, eg. facebook as **FB** google as **GOOG**
